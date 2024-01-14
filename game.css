@@ -25,10 +25,15 @@ body {
   height: 14vh;
   width: 14vw;
   margin: 1rem;
-  background-color: #a49694;
+  background-color: #cecccb;
   border: none;
   border-radius: 10%;
   box-shadow: 10px 10px 30px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: rgb(180, 8, 8);
 }
 h1 {
   font-size: 3rem;
