@@ -2,11 +2,20 @@
   padding: 0;
   margin: 0;
 }
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: #d5a021;
+  /* background-color: #d5a021; */
+  background-image: url("images/bg-2.jpg");
+  background-size: cover;
+  background-position: top;
+  font-family: "Merienda", sans-serif;
 }
 .container {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -15,15 +24,18 @@ body {
 
 .game {
   height: 50vh;
-  width: 50vw;
-  display: flex;
+  /* width: 50vw; */
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .box {
   height: 14vh;
-  width: 14vw;
+  width: 14rem;
+  /* padding: 2rem; */
   margin: 1rem;
   background-color: #cecccb;
   border: none;
@@ -36,16 +48,99 @@ body {
   color: rgb(180, 8, 8);
 }
 h1 {
-  font-size: 3rem;
+  font-size: 6rem;
   margin-bottom: 3rem;
-  color: #ede7d9;
+  /* color: #ede7d9; */
+  color: red;
+  transform: rotate(-5deg);
+}
+
+.welcome {
+  font-size: 4rem;
+  color: white;
+  font-weight: 600;
+  transform: rotate(-5deg);
+  /* background-color: #4942e4; */
+  background-color: #7d555b;
+  padding: 1rem 1.5rem;
 }
 
 .reset-btn {
-  padding: 0.8rem;
+  padding: 1rem;
   font-size: 1.5rem;
   border: none;
+  border-radius: 4px;
   background-color: #4b4237;
   color: rgba(255, 255, 255, 0.9);
   margin-top: 6rem;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #4b42378c;
+}
+.cross {
+  color: red;
+}
+
+.dot {
+  color: #4942e4;
+}
+
+.box-hidden {
+  display: none;
+}
+
+.result {
+  display: none;
+}
+
+.show-res {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.player {
+  position: absolute;
+  top: 2.2rem;
+  left: 4.8rem;
+  z-index: 5;
+  font-size: 2rem;
+  animation: pulse 1s infinite alternate;
+}
+
+.trophy {
+  font-size: 8rem;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Initial size */
+  }
+  100% {
+    transform: scale(1.2); /* Larger size */
+  }
+}
+
+/* Media Query */
+@media (max-width: 511px) {
+  .box {
+    width: 10rem;
+  }
+}
+
+@media (max-width: 401px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  .welcome {
+    font-size: 4rem;
+  }
+  .box {
+    width: 8rem;
+  }
 }
